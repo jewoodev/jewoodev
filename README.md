@@ -1,6 +1,4 @@
-I'm a backend engineer working with **Java / Kotlin / Spring Boot** and open-source contributor on `spring-projects/spring-ai`, currently exploring schema generation, transport-layer plumbing, and provider documentation consistency. I wo
-
-- 📝 Tech blog: [jewoodev.github.io](https://jewoodev.github.io)
+I'm a backend engineer working with **Java / Kotlin / Spring Boot** and open-source contributor on `spring-projects/spring-ai`, currently exploring schema generation, transport-layer plumbing, and provider documentation consistency.
 
 ---
 
