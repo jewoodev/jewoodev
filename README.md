@@ -1,7 +1,4 @@
-# 신제우 jewoodev
-
-Backend engineer working with **Java / Kotlin / Spring Boot**.
-Open-source contributor on `spring-projects/spring-ai`, currently exploring schema generation, transport-layer plumbing, and provider documentation consistency.
+I'm backend engineer working with **Java / Kotlin / Spring Boot** and open-source contributor on `spring-projects/spring-ai`, currently exploring schema generation, transport-layer plumbing, and provider documentation consistency.
 
 - 📝 Tech blog: [jewoodev.github.io](https://jewoodev.github.io)
 
