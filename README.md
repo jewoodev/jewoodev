@@ -8,7 +8,7 @@ I'm a backend engineer working with **Java / Kotlin / Spring Boot** and open-sou
 
 > An Application Framework for AI Engineering
 
-#### [#6035](https://github.com/spring-projects/spring-ai/pull/6035) — Fix recursive tool input schema by hoisting `$defs` to root ![status](https://img.shields.io/badge/status-merged-blueviolet)
+#### [#6035](https://github.com/spring-projects/spring-ai/pull/6035) — Fix recursive tool input schema by hoisting `$defs` to root ![status](https://img.shields.io/badge/status-merged-blueviolet) ![milestone](https://img.shields.io/badge/milestone-2.0.0--M7-blue)
 
 - **Problem**: Spring AI inlined parameter schemas under `properties.<param>`, but their generated `$ref`s still pointed to root-level `$defs`. For recursive parameter types, this produced an **unresolvable `$ref`** in the tool input schema.
 - **Fix**: Hoist each parameter schema's `$defs` up to the wrapper schema root before inlining. Reuse structurally equal definitions, rename simple-name collisions, and rewrite peer `$ref`s inside the hoisted schema.
