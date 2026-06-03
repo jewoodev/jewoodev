@@ -34,18 +34,22 @@ Follow-up to [#6036](https://github.com/spring-projects/spring-ai/issues/6036): 
 
 ### [micrometer-metrics/micrometer](https://github.com/micrometer-metrics/micrometer/pulls?q=is%3Apr+author%3Ajewoodev+is%3Aclosed) — *An application observability facade*
 
-- **[#7546](https://github.com/micrometer-metrics/micrometer/pull/7546)** — `docs`: clarify Prometheus LongTaskTimer output ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![branch](https://img.shields.io/badge/branch-1.15.x-blue)
-  Added a Timer/LongTaskTimer mapping table to the Prometheus implementation page documenting the default `_seconds_count` / `_sum` / `_max` suffixes and the gauge-histogram `_seconds_gcount` / `_seconds_gsum` series exposed when `publishPercentileHistogram()` is enabled, plus an xref from the registry-neutral concepts page. Addresses [#6507](https://github.com/micrometer-metrics/micrometer/issues/6507).
+#### [#7546](https://github.com/micrometer-metrics/micrometer/pull/7546) — `docs`: clarify Prometheus LongTaskTimer output ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![branch](https://img.shields.io/badge/branch-1.15.x-blue)
 
-- **[#7549](https://github.com/micrometer-metrics/micrometer/pull/7549)** — Document `MeterBinder`s that need to be closed ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![branch](https://img.shields.io/badge/branch-1.15.x-blue)
-  Added a `close()` lifecycle Javadoc note across 9 `AutoCloseable` binders (`JvmGcMetrics`, `JvmHeapPressureMetrics`, `Log4j2Metrics`, `LogbackMetrics`, `KafkaClientMetrics`, `KafkaStreamsMetrics`, `JettyServerThreadPoolMetrics`, `CommonsObjectPool2Metrics`, …) and a matching reference-doc NOTE on 6 implementation pages. Closes [#4624](https://github.com/micrometer-metrics/micrometer/issues/4624).
+Added a Timer/LongTaskTimer mapping table to the Prometheus implementation page documenting the default `_seconds_count` / `_sum` / `_max` suffixes and the gauge-histogram `_seconds_gcount` / `_seconds_gsum` series exposed when `publishPercentileHistogram()` is enabled, plus an xref from the registry-neutral concepts page. Addresses [#6507](https://github.com/micrometer-metrics/micrometer/issues/6507).
+
+#### [#7549](https://github.com/micrometer-metrics/micrometer/pull/7549) — Document `MeterBinder`s that need to be closed ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![branch](https://img.shields.io/badge/branch-1.15.x-blue)
+
+Added a `close()` lifecycle Javadoc note across 9 `AutoCloseable` binders (`JvmGcMetrics`, `JvmHeapPressureMetrics`, `Log4j2Metrics`, `LogbackMetrics`, `KafkaClientMetrics`, `KafkaStreamsMetrics`, `JettyServerThreadPoolMetrics`, `CommonsObjectPool2Metrics`, …) and a matching reference-doc NOTE on 6 implementation pages. Closes [#4624](https://github.com/micrometer-metrics/micrometer/issues/4624).
+
 
 ---
 
 ### [spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa/pulls?q=is%3Apr+author%3Ajewoodev+is%3Aclosed) — *JPA-based data access for Spring Data*
 
-- **[#4262](https://github.com/spring-projects/spring-data-jpa/pull/4262)** — Document fetch behavior for streaming query results ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![milestone](https://img.shields.io/badge/milestone-3.5.12-blue)
-  Added a JPA-specific Query Hints note clarifying that a `Stream<T>` return type does not guarantee incremental row fetching — actual behavior depends on the JPA provider and JDBC driver. Closes [#1346 (DATAJPA-1007)](https://github.com/spring-projects/spring-data-jpa/issues/1346), an issue carried over from the Spring Data JIRA era. Merged and backported to maintenance branches.
+#### [#4262](https://github.com/spring-projects/spring-data-jpa/pull/4262) — Document fetch behavior for streaming query results ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![milestone](https://img.shields.io/badge/milestone-3.5.12-blue)
+
+Added a JPA-specific Query Hints note clarifying that a `Stream<T>` return type does not guarantee incremental row fetching — actual behavior depends on the JPA provider and JDBC driver. Closes [#1346 (DATAJPA-1007)](https://github.com/spring-projects/spring-data-jpa/issues/1346), an issue carried over from the Spring Data JIRA era. Merged and backported to maintenance branches.
 
 ---
 
