@@ -6,9 +6,9 @@ I'm a backend engineer working with **Java / Kotlin / Spring Boot** and an open-
 
 ## 🌱 Open Source Contributions
 
-### [spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa/pulls?q=is%3Apr+author%3Ajewoodev) — *JPA-based data access for Spring Data*
+### [spring-projects/spring-data-jpa](https://github.com/spring-projects/spring-data-jpa/pulls?q=is%3Apr+author%3Ajewoodev)
 
-#### ⭐ JPQL / EQL / HQL query renderer — fix 4 round-trip defects ![merged](https://img.shields.io/badge/status-merged%20%2B%20backported-blueviolet) ![issue](https://img.shields.io/badge/issue-%234272-blue) ![pr](https://img.shields.io/badge/pr-%234273-blue)
+#### ⭐ JPQL / EQL / HQL query renderer — fix 4 round-trip defects 
 
 - **Problem**: Spring Data JPA's query renderers (`JpqlQueryRenderer`, `EqlQueryRenderer`, `HqlQueryRenderer`) re-emitted certain grammar elements differently from the original input during the `parse → AST → render` round-trip. I opened [#4272](https://github.com/spring-projects/spring-data-jpa/issues/4272) reproducing 3 defects in JPQL/EQL, and the maintainer's follow-up ("please also review the HQL renderer") surfaced a 4th defect in HQL.
 - **Fix**: Corrected the affected `visit*()` implementations in each renderer **without changing the ANTLR grammar definitions** — the fix lives entirely in the visitor layer.
@@ -18,9 +18,9 @@ I'm a backend engineer working with **Java / Kotlin / Spring Boot** and an open-
 
 ---
 
-### [spring-projects/spring-ai](https://github.com/spring-projects/spring-ai/pulls?q=is%3Apr+author%3Ajewoodev) — *An Application Framework for AI Engineering*
+### [spring-projects/spring-ai](https://github.com/spring-projects/spring-ai/pulls?q=is%3Apr+author%3Ajewoodev)
 
-#### ⭐ [#6035](https://github.com/spring-projects/spring-ai/pull/6035) — Fix recursive tool input schema by hoisting `$defs` to root ![merged](https://img.shields.io/badge/status-merged-blueviolet) ![milestone](https://img.shields.io/badge/milestone-2.0.0--M7-blue)
+#### ⭐ [#6035](https://github.com/spring-projects/spring-ai/pull/6035) — Fix recursive tool input schema by hoisting `$defs` to root
 
 - **Problem**: Spring AI inlined parameter schemas under `properties.<param>`, but their generated `$ref`s still pointed to root-level `$defs`. For recursive parameter types, this produced an **unresolvable `$ref`** in the tool input schema.
 - **Fix**: Hoist each parameter schema's `$defs` up to the wrapper schema root before inlining. Reuse structurally equal definitions, rename simple-name collisions, and rewrite peer `$ref`s inside the hoisted schema.
@@ -29,9 +29,9 @@ I'm a backend engineer working with **Java / Kotlin / Spring Boot** and an open-
 
 ---
 
-### [JetBrains/koog](https://github.com/JetBrains/koog/pulls?q=is%3Apr+author%3Ajewoodev) — *JVM framework for building enterprise-ready AI agents*
+### [JetBrains/koog](https://github.com/JetBrains/koog/pulls?q=is%3Apr+author%3Ajewoodev)
 
-#### ⭐ [#2052](https://github.com/JetBrains/koog/pull/2052) — `fix(prompt)`: Don't start a new tool call on repeated tool call id ![merged](https://img.shields.io/badge/status-merged-blueviolet)
+#### ⭐ [#2052](https://github.com/JetBrains/koog/pull/2052) — `fix(prompt)`: Don't start a new tool call on repeated tool call id
 
 - **Problem**: `StreamFrameFlowBuilder.emitToolCallDelta()` treated every chunk with a non-null tool-call `id` as a new tool call. For OpenAI-compatible providers that repeat the same `id` on every streaming chunk, this fragmented one logical tool call into multiple premature `ToolCallComplete` frames.
 - **Fix**: A new tool call now begins only when a present `id` or `index` differs from the pending call (mirroring the existing logic in `emitReasoningDelta`). Absent / blank ids still continue the pending call.
